@@ -35,13 +35,15 @@ import right_arrow from './right-arrow.png';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
-import { SiJavaScript } from 'react-icons/si';
+import { SiJavascript } from 'react-icons/si';
 import { SiReact } from 'react-icons/si';
 import { SiNextdotjs } from 'react-icons/si';
 import { SiNodedotjs } from 'react-icons/si';
 import { SiTailwindcss } from 'react-icons/si';
-import { SiTypescript } from 'react-icons/si';      
-
+import { SiTypescript } from 'react-icons/si';    
+import { SiBootstrap } from 'react-icons/si';  
+import { SiMongodb } from 'react-icons/si';
+import { FaNodeJs } from 'react-icons/fa';
 export const assets = {
     user_image,
     code_icon,
@@ -123,10 +125,13 @@ export const toolsData = [
 ];
 
 export const skills = [
-    {name:"JavaScript" , icon:<siJavaScript /> , } , 
-    {name:"React Js" , icon: <siReact />, }, 
-    {name:"Next js" , icon: <siNextdotjs />, },
-    {name:"Node js" , icon: <siNodedotjs />, },
-    {name:"Tailwind css" , icon: <siTailwindcss />, },
-     {name:"TypeScript" , icon: <siTypescript />, }
+{ name: "JavaScript", icon: <SiJavascript /> },
+  { name: "React Js", icon: <SiReact /> },
+  { name: "Next Js", icon: <SiNextdotjs /> },
+  { name: "Node Js", icon: <FaNodeJs /> },   // better Node icon
+  { name: "Express Js", icon: <FaNodeJs /> }, // Express alternative
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+   { name: "Bootstrap", icon: <SiBootstrap /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
 ]

@@ -17,23 +17,23 @@ const About = () => {
                 <p className='mb-10 max-w-2xl font-ovo'>I am a passionate MERN Stack Developer with hands-on experience in building modern,responsive,and user-friendly web applications.i work with technologies like React,Next.js</p>
 
                 <ul className='grid grid-col-1 sm:grid-cols-3 gap-6 max-w-2xl'>
-                    {infoList.map(({icon,iconDark,title,description}, index)=>{
+                    {infoList.map(({icon,iconDark,title,description}, index)=>(
                         <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black'>
                             <Image src={icon} alt={title} className='w-7 mt-3'/>
                             <h3 className='my-4 font-semibold text-gray-700'>{title}</h3>
                             <p className='text-gray-600 text-sm'>{description}</p>
                         </li>
-                    })}
+                    ))}
                 </ul>
 
                 <h4 className='my-6 text-gray-700 font-ovo'>Tools i use</h4>
 
                 <ul className='flex items-center gap-3 sm:gap-5'>
-                    {toolsData.map((tool,index)=>{
+                    {toolsData.map((tool,index)=>(
                         <li key={index} className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:translate-y-1 duration-500'>
                             <Image src={tool} alt='Tool' className='w-5 sm:w-7'/>
                         </li>
-                    })}
+                    ))}
                 </ul>
 
             </div>

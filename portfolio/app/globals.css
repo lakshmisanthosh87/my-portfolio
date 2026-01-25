@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-*{
-  font-family: outfit;
+body {
+  font-family: var(--font-outfit);
 }
