@@ -14,7 +14,7 @@ const About = () => {
             </div>
 
             <div className='flex-1'>
-                <p className='mb-10 max-w-2xl font-ovo'>I am a passionate MERN Stack Developer with hands-on experience in building modern,responsive,and user-friendly web applications.i work with technologies like React,Next.js</p>
+                <p className='mb-10 max-w-2xl font-ovo'>I am a passionate MERN Stack Developer with hands-on experience in building modern, responsive, and user-friendly web applications. I work with technologies like React, Next.js, Node.js, Express, and MongoDB to create clean user interfaces and efficient backend APIs. I enjoy learning new technologies, solving problems, and continuously improving my skills by building real-world projects.</p>
 
                 <ul className='grid grid-col-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                     {infoList.map(({icon,iconDark,title,description}, index)=>(

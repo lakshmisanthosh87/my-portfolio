@@ -44,6 +44,12 @@ import { SiTypescript } from 'react-icons/si';
 import { SiBootstrap } from 'react-icons/si';  
 import { SiMongodb } from 'react-icons/si';
 import { FaNodeJs } from 'react-icons/fa';
+
+import { FaLaptopCode } from "react-icons/fa"
+import { FaServer } from "react-icons/fa"
+import { MdDevices } from "react-icons/md"
+import { BsDatabase } from "react-icons/bs"
+
 export const assets = {
     user_image,
     code_icon,
@@ -108,20 +114,21 @@ export const workData = [
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { icon: FaServer, title: 'Full-Stack Development', description: 'I develop complete web applications using the MERN stack, handling frontend, backend logic, and database integration efficiently. process of building, programming...', link: '' },
+    { icon: FaLaptopCode, title: 'Frontend Development', description: 'I create responsive and interactive user interfaces using React and Next.js. My focus is on clean design, smooth user experience, and performance. creating software for mobile devices...', link: '' },
+    { icon: BsDatabase, title: 'Backend & API Development', description: 'I build secure and scalable backend APIs using Node.js, Express, and MongoDB to manage data and application logic.UI/UX design focuses on creating a seamless user experience...', link: '' },
+    { icon: MdDevices, title: 'Responsive Web Design', description: 'I design websites that work smoothly on all devices, ensuring a consistent experience across mobile, tablet, and desktop screens.Creative design solutions to enhance visual communication...', link: '' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Bachelor of Computer Application ' },
+    // { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'Mearn Stack Developer Intern' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
 export const toolsData = [
-    assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
+    assets.vscode, assets.Postman, assets.mongodb, assets.figma, assets.git
 ];
 
 export const skills = [
