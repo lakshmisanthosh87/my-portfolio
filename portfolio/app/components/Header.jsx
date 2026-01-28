@@ -1,42 +1,104 @@
-import { assets } from '@/assests/assets'
+import React from 'react'
 import Image from 'next/image'
 import TypeWriter from 'typewriter-effect'
-import React from 'react'
-import  { motion } from 'framer-motion'
-import { scale } from 'motion'
+import { assets } from '@/assests/assets'
 
 const Header = () => {
   return (
-    <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4'>
-        <motion.div
-        initial={{scale:0}}
-        whileInView={{scale:1}}
-        transition={{duration:0.8, type:'spring', stiffness:100}}
-        >
-            <Image src={assets.profile_img} alt="" className='rounded-full w-32'/>
-        </motion.div>
+    <div className="w-11/12 max-w-4xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-6">
 
-        <h3 
-         className='flex items-end gap-2 text-xl md:text-2xl font-Ovo'>Hi! I'm Lakshmi Santhosh <Image src={assets.hand_icon} alt="" className='w-6'/></h3>
-
-        <h5
-       className='text-xl sm:text-6xl lg:text-[40px] font-Ovo'>  <span>A Passionate -</span> <span className='text-cyan-400'><TypeWriter options={{ strings: ['Frontend Developer', 'Backend Developer', 'Web Developer'], autoStart: true, loop: true,delay:75,deleteSpeed:50}} /></span></h5>
-
-        <p 
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration: 0.6, delay:0.7}} className='max-w-2xl mx-auto font-Ovo'>
-           A passionate web developer who enjoys building scalable, responsive, and user-friendly applications using modern technologies.
-        </p>
-
-        <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-            <a   href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2'>Contact me <Image src={assets.right_arrow_white} alt="" className='w-4'/></a>
-            <a
-            
-             href="/sample-resume.pdf" download  className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2'>My resume <Image src={assets.right_arrow_white} alt="" className='w-4'/></a>
-
+      {/* Profile Image */}
+      <div className="relative mb-2">
+        <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_120deg_at_50%_50%,rgba(56,189,248,0.4),rgba(129,140,248,0.2),rgba(236,72,153,0.4),rgba(56,189,248,0.4))] blur-2xl opacity-80 animate-pulse" />
+        <div className="relative mt-10 rounded-full border border-cyan-400/40 bg-slate-900/60 p-1 shadow-[0_0_50px_rgba(56,189,248,0.8)]">
+          <Image
+            src="/images/sherin.png"
+            width={200}
+            height={200}
+            alt="Profile"
+            className="rounded-full w-32 sm:w-40 md:w-44"
+          />
         </div>
+      </div>
 
+      {/* Name */}
+      <h3 className="flex items-end gap-2 text-xl md:text-2xl font-ovo text-slate-100">
+        Hi! I&apos;m Lakshmi Santhosh
+        <Image
+          src={assets.hand_icon}
+          alt="Hello"
+          className="w-6 animate-bounce origin-bottom"
+        />
+      </h3>
+
+      {/* Title */}
+      <h5 className="text-2xl sm:text-4xl lg:text-[42px] font-ovo leading-snug text-slate-50">
+        <span className="block mb-1 text-slate-300 text-base tracking-[0.3em] uppercase">
+          MERN Stack Developer
+        </span>
+
+        <span className="block">
+          Crafting{' '}
+          <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+            beautiful experiences
+          </span>
+        </span>
+
+        <span className="block mt-1 text-cyan-300 text-lg sm:text-2xl">
+          <TypeWriter
+            options={{
+              strings: ['Frontend Developer', 'Backend Developer', 'Web Developer'],
+              autoStart: true,
+              loop: true,
+              delay: 75,
+              deleteSpeed: 50,
+            }}
+          />
+        </span>
+      </h5>
+
+      {/* Description */}
+      <p className="max-w-2xl mx-auto font-ovo text-slate-300 text-sm sm:text-base">
+        I love building smooth, animated and responsive web apps that feel modern and alive.
+        From pixel-perfect UIs to performant backends, I focus on creating experiences that
+        people remember.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+
+        {/* Contact */}
+        <a
+          href="#contact"
+          className="group px-10 py-3 border border-transparent rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white flex items-center gap-2 shadow-lg shadow-cyan-500/40 hover:from-cyan-400 hover:to-blue-600 hover:-translate-y-0.5 transition-all duration-300"
+        >
+          Contact me
+          <Image
+            src={assets.right_arrow_white}
+            alt="Arrow"
+            className="w-4 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </a>
+
+        {/* Download CV */}
+       {/* Download & View CV */}
+<a
+  href="/resume/Lakshmi_santhosh-cv.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  download
+  className="group px-10 py-3 border rounded-full border-slate-600 flex items-center gap-2 bg-slate-900/70 text-slate-100 hover:bg-slate-900 hover:-translate-y-0.5 hover:border-cyan-400 transition-all duration-300"
+>
+  <Image
+    src={assets.download_icon}
+    alt="Download CV"
+    className="w-4 h-4"
+  />
+  <span>View / Download CV</span>
+</a>
+
+
+      </div>
     </div>
   )
 }

@@ -4,25 +4,43 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='mt-20'>
-        <div className='text-center'>
-            <h2 className='text-2xl'>LS</h2>
-            <div className='w-max flex items-center gap-2 mx-auto'>
-                <Image src={ assets.mail_icon} alt=''className='w-6'/>
-                lakshmisanthosh8714@mail.com
-            </div>
+    <footer className="mt-20 border-t border-slate-800/80 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/40">
+      <div className="max-w-4xl mx-auto px-[8%] py-10 flex flex-col items-center gap-4 text-center">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-glow">
+            LS
+          </span>
+          <span className="font-ovo text-slate-100 text-lg">Lakshmi Santhosh</span>
         </div>
 
-        <div className='text-center sm:flesx items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6'>
-            <p>@ 2025 Lakshmi santhosh .All rights reserved.</p>
-
-            <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
-                <li><a target='_blank' href="">GitHub</a></li>
-                <li><a target='_blank' href="">LinkesIn</a></li>
-                <li><a target='_blank' href="">Twitter</a></li>
-            </ul>
+        <div className="flex items-center gap-2 text-slate-300 text-sm">
+          <Image src={assets.mail_icon} alt="Mail" className="w-5" />
+          <span>lakshmilachu567890@mail.com</span>
         </div>
-    </div>
+
+        <ul className="mt-3 flex items-center gap-6 text-sm text-slate-300 justify-center">
+          <li>
+            <a target="_blank" href="https://github.com/lakshmisanthosh87" className="hover:text-cyan-300 transition-colors">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/lakshmi-santhosh-81733b384?" className="hover:text-cyan-300 transition-colors">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="" className="hover:text-cyan-300 transition-colors">
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div className="border-t border-slate-800/80 py-4 text-center text-xs text-slate-500">
+        <p>© {new Date().getFullYear()} Lakshmi Santhosh. All rights reserved.</p>
+      </div>
+    </footer>
   )
 }
 

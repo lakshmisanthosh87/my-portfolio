@@ -91,27 +91,33 @@ export const assets = {
 };
 
 export const workData = [
-    {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
-    },
-    {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
-]
+  {
+    title: "Double Barrel",
+    description: `Collaboratively developed a product-based web application as part of a team project using React, Node.js, and Express. Designed and implemented core product features such as product listing, product details, and product management workflows. Worked on requirement analysis, application flow design, and feature development following a modular Double-Barrel architecture for clean and maintainable code. Integrated RESTful APIs between frontend and backend and coordinated with team members to ensure smooth integration, consistent functionality, and timely project delivery.`,
+    techStack: ["React", "Node.js", "Express", "JavaScript", "REST API" ,"MongoDB","Tailwind css","Typescript" ], 
+  },
+
+ 
+
+  {
+    title: "Product Management System",
+    description: `Built a backend-driven Product Management System allowing admins to add, update, delete, and view products. Implemented multiple image uploads, authentication, and validation logic. Focused on clean API design and secure data handling.`,
+    
+  },
+
+  {
+    title: "Contact Management Application",
+    description: `Developed a Contact Management Application using React that allows users to add, view, update, and delete contact details. Used React Hooks for state management and integrated local storage to ensure data persistence with a responsive and user-friendly interface.`,
+
+  },
+
+  {
+    title: "Weather Application",
+    description: `Created a Weather Application that fetches real-time weather data using a public API. Users can search by city to view temperature, humidity, and weather conditions. Implemented API integration, error handling, and dynamic UI updates.`,
+    techStack: ["JavaScript", "API Integration", "HTML", "CSS"],
+  },
+];
+
 
 export const serviceData = [
     { icon: FaServer, title: 'Full-Stack Development', description: 'I develop complete web applications using the MERN stack, handling frontend, backend logic, and database integration efficiently. process of building, programming...', link: '' },
