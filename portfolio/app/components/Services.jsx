@@ -30,17 +30,17 @@ export const Services = () => {
                 <h3 className="text-lg font-semibold my-2 text-slate-50">{title}</h3>
                 <p className="text-sm text-slate-300 leading-6">{description}</p>
 
-                <a
-                  href={link}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 group-hover:text-cyan-200 transition-colors"
-                >
-                  Read more
-                  <Image
-                    src={assets.right_arrow}
-                    alt=""
-                    className="w-4 transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </a>
+                <span
+  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 cursor-default"
+>
+  Read more
+  <Image
+    src={assets.right_arrow}
+    alt=""
+    className="w-4"
+  />
+</span>
+
               </div>
             </div>
           )

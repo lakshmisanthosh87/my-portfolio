@@ -134,7 +134,7 @@ export const infoList = [
 ];
 
 export const toolsData = [
-    assets.vscode, assets.Postman, assets.mongodb, assets.figma, assets.git
+    assets.vscode,  assets.mongodb, assets.figma, assets.git
 ];
 
 export const skills = [
