@@ -42,6 +42,7 @@ const Work = () => {
   <p className="text-sm text-cyan-300">
     Tech stack: <span className="text-slate-100">{item.techStack.join(', ')}</span>
   </p>
+  <p className="text-sm text-cyan-300">{item.sourcecode && <a href={item.sourcecode} target="_blank" rel="noopener noreferrer" className="underline">Source Code</a>}</p>
 </div>
           </article>
         ))}

@@ -48,6 +48,7 @@ import { SiVisualstudiocode } from 'react-icons/si';
 import { SiFigma } from 'react-icons/si';
 import { SiGit } from 'react-icons/si';
 import { TbApi } from "react-icons/tb";
+import { VscVscode } from 'react-icons/vsc';
 
 // import { SiPostman } from 'react-icons/si';
 import { FaNodeJs } from 'react-icons/fa';
@@ -104,30 +105,35 @@ export const workData = [
     description: "A team-based product web app with modular architecture and RESTful APIs.",
     techStack: ["React", "Node.js", "Express", "JavaScript", "REST API", "MongoDB", "Tailwind CSS", "TypeScript", "Redux"],
     image: "/images/double.jpeg",
+    sourcecode: "https://github.com/nithin32567/double-barrel/tree/develop",
   },
   {
     title: "Student Management System",
     description: "Backend system for managing products with authentication and image uploads.",
     techStack: ["Express", "MongoDB", "REST API", " Node.js", "JavaScript", "JWT"],
     image: "/images/student.jpeg",
+    sourcecode: "https://github.com/lakshmisanthosh87/express__student",
   },
   {
     title: "Contact Management Application",
     description: "Contact book to add, view, update, and delete contacts with local storage.",
     techStack: ["Express", "MongoDB", "REST API", " Node.js", "JavaScript", "Local Storage"],
     image: "/images/contact.png",
+    sourcecode: "https://github.com/lakshmisanthosh87/contact-management",
   },
   {
     title: "Weather Application",
     description: "Weather app fetching real-time data with city search and dynamic UI.",
     techStack: ["JavaScript", "API Integration", "HTML", "CSS"],
     image: "/images/weather.jpeg",
+    sourcecode: "https://github.com/lakshmisanthosh87/weather_app",
   },
   {
     title: "Agency.ai",
     description:  "A modern AI agency landing page showcasing services, features, and brand identity.",
     techStack: ["React",   "JavaScript",  "Responsive Design"],
     image: "/images/agency.jpeg",
+    sourcecode: "https://github.com/lakshmisanthosh87/agency.ai",
   },
   {
     title: "Digital Clock",
@@ -135,6 +141,7 @@ export const workData = [
       "A real-time digital clock displaying current time using basic frontend technologies.",
     techStack: ["HTML", "CSS", "JavaScript"],
     image: "/images/clock.png",
+    sourcecode: "https://github.com/lakshmisanthosh87/clock",
   },
 ];
 
@@ -155,7 +162,7 @@ export const infoList = [
 ];
 
 export const toolsData = [
-  { name: "vscode", icon: <FaCode /> }, { name: "mongodb", icon: <SiMongodb /> }, { name: "figma", icon: <SiFigma /> }, { name: "git", icon: <SiGit /> }, { name: "postman", icon: <SiPostman /> }
+  { name: "vscode", icon: <VscVscode /> }, { name: "mongodb", icon: <SiMongodb /> }, { name: "figma", icon: <SiFigma /> }, { name: "git", icon: <SiGit /> }, { name: "postman", icon: <SiPostman /> }
 ];
 
 export const skills = [

@@ -112,7 +112,7 @@ const Navbar = () => {
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-slate-950/95 border-l border-slate-800 shadow-2xl shadow-black/70 transition-transform duration-500"
         >
           <div className="absolute right-6 top-6 flex items-center gap-3">
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="flex items-center justify-center w-8 h-8 rounded-full border border-slate-600 bg-slate-900/80 hover:bg-slate-800 transition-colors"
             >
@@ -121,7 +121,7 @@ const Navbar = () => {
                 alt="Theme toggle"
                 className="w-4"
               />
-            </button>
+            </button> */}
             <Image src={assets.close_black} alt="" onClick={closeMenu} className="w-5 cursor-pointer invert" />
           </div>
           <li>
