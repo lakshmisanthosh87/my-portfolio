@@ -46,15 +46,18 @@ const About = () => {
           <h4 className="my-6 text-slate-200 font-ovo">Tools I use</h4>
 
           <ul className="flex flex-wrap items-center gap-3 sm:gap-5">
-            {toolsData.map((tool, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-slate-700/80 rounded-xl cursor-pointer bg-slate-900/80 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.7)] transition-all duration-300"
-              >
-                <Image src={tool} alt="Tool" className="w-5 sm:w-7" />
-              </li>
-            ))}
-          </ul>
+  {toolsData.map((tool, index) => (
+    <li
+      key={index}
+      className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-slate-700/80 rounded-xl rounded-xl bg-slate-900/80 hover:-translate-y-1 hover:border-cyan-400 transition-all duration-300"
+    >
+      <span className="text-xl sm:text-2xl text-white">
+        {tool.icon}
+      </span>
+    </li>
+  ))}
+</ul>
+
         </div>
       </div>
     </div>

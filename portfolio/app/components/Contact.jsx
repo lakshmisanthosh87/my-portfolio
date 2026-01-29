@@ -1,97 +1,188 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { assets } from "@/assests/assets";
-import Image from "next/image";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Contact = () => {
   const form = useRef(null);
+
   const [result, setResult] = useState("");
+  const [errors, setErrors] = useState({ name: "", email: "" });
+
+  /* ---------- VALIDATION ---------- */
+
+  const validateName = (value) => {
+    if (!value.trim()) return "Name is required";
+    if (value.length < 3) return "Minimum 3 characters";
+    return "";
+  };
+
+  const validateEmail = (value) => {
+    if (!value.trim()) return "Email is required";
+    if (!/^\S+@\S+\.\S+$/.test(value)) return "Invalid email";
+    return "";
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setErrors((prev) => ({
+      ...prev,
+      [name]:
+        name === "name"
+          ? validateName(value)
+          : validateEmail(value),
+    }));
+  };
+
+  /* ---------- SEND EMAIL ---------- */
 
   const sendEmail = (e) => {
     e.preventDefault();
     if (!form.current) return;
 
+    const nameError = validateName(form.current.name.value);
+    const emailError = validateEmail(form.current.email.value);
+
+    if (nameError || emailError) {
+      setErrors({ name: nameError, email: emailError });
+      return;
+    }
+
     setResult("Sending...");
 
     emailjs
       .sendForm(
-        "service_zwt65rj",
-        "template_f6gfa3t",
+        "service_n17xuy4",
+        "template_oezz67s",
         form.current,
         "H3mLhez_r7ymjEmHf"
       )
       .then(() => {
         setResult("Message sent successfully!");
         form.current.reset();
+        setErrors({ name: "", email: "" });
       })
-      .catch((error) => {
-        console.error(error);
-        setResult("Failed to send. Please try again.");
-      });
+      .catch(() => setResult("Failed to send"));
   };
 
   return (
-    <div>
-      <div
-        id="contact"
-        className="w-full px-[12%] py-16 scroll-mt-20 bg-gradient-to-b from-slate-950/0 via-slate-950/40 to-slate-950"
-      >
-        <h4 className="text-center mb-2 text-lg font-ovo text-slate-300">
-          Connect with me
-        </h4>
-        <h2 className="text-center text-3xl sm:text-5xl font-ovo text-slate-50">
-          Get in touch
-        </h2>
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo text-slate-200">
-          I&apos;d love to hear from you! If you have any questions, ideas, or
-          opportunities, drop a message below.
-        </p>
-      </div>
+    <section
+      id="contact"
+      className="w-full px-[12%] py-20 bg-gradient-to-b from-slate-950 via-slate-950/60 to-slate-950"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="max-w-2xl mx-auto -mt-8 mb-10 rounded-3xl border border-slate-700/80 bg-slate-950/80 backdrop-blur-xl p-8 shadow-[0_18px_45px_rgba(15,23,42,0.9)]"
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-            className="flex-1 p-3 rounded-xl border border-slate-700 bg-slate-900/80 outline-none text-sm text-slate-100 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-shadow"
-          />
+        {/* LEFT */}
+        <div>
+          <h2 className="text-4xl sm:text-5xl text-white mb-4">
+            Schedule a call with me
+          </h2>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-            className="flex-1 p-3 rounded-xl border border-slate-700 bg-slate-900/80 outline-none text-sm text-slate-100 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-shadow"
-          />
+          <p className="text-slate-300 mb-8 max-w-md">
+            Reach out and let’s discuss how I can help you.
+          </p>
+
+          <div className="space-y-4 text-slate-200 mb-6">
+            <p>📞 +91 8714503966</p>
+            <p>✉️ lakshmisanthosh87@gmail.com</p>
+            <p>📍 Thrissur, Kerala</p>
+          </div>
+
+          {/* SOCIAL ICONS */}
+          <div className="flex gap-4 text-xl">
+            <a
+              href="https://github.com/lakshmisanthosh87"
+              target="_blank"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-cyan-500 transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/lakshmi-santhosh-81733b384?"
+              target="_blank"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-blue-500 transition"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a
+              href="https://www.instagram.com/lakshmi__lax_"
+              target="_blank"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-pink-500 transition"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="https://wa.me/916282369345"
+              target="_blank"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-green-500 transition"
+            >
+              <FaWhatsapp />
+            </a>
+          </div>
         </div>
 
-        <textarea
-          name="message"
-          rows={6}
-          placeholder="Enter your message"
-          required
-          className="w-full p-4 rounded-xl border border-slate-700 bg-slate-900/80 outline-none text-sm text-slate-100 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-shadow mb-6 resize-none"
-        />
-
-        <button
-          type="submit"
-          className="py-3 px-10 w-max flex items-center justify-between gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full mx-auto hover:from-cyan-400 hover:to-blue-600 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/40 transition-all duration-300"
+        {/* RIGHT – FORM */}
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="bg-slate-950/80 p-8 rounded-3xl border border-slate-700"
         >
-          Submit now
-          <Image src={assets.right_arrow_white} alt="arrow" />
-        </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={handleChange}
+                className="w-full p-3 rounded-xl bg-slate-900 border border-slate-700 text-white"
+              />
+              {errors.name && (
+                <p className="text-red-400 text-sm">{errors.name}</p>
+              )}
+            </div>
 
-        {result && (
-          <p className="mt-4 text-center text-sm text-slate-200">{result}</p>
-        )}
-      </form>
-    </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleChange}
+                className="w-full p-3 rounded-xl bg-slate-900 border border-slate-700 text-white"
+              />
+              {errors.email && (
+                <p className="text-red-400 text-sm">{errors.email}</p>
+              )}
+            </div>
+          </div>
+
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Your Message"
+            required
+            className="w-full p-4 rounded-xl bg-slate-900 border border-slate-700 text-white mb-6"
+          />
+
+          <button
+            type="submit"
+            className="py-3 px-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-white mx-auto block"
+          >
+            Send Message
+          </button>
+
+          {result && (
+            <p className="text-center mt-4 text-slate-300">{result}</p>
+          )}
+        </form>
+      </div>
+    </section>
   );
 };
 

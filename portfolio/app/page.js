@@ -11,15 +11,20 @@ import { Services } from "./components/Services";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 
+
+
 export default function Home() {
   return (
    <>
    <Navbar/>
    <Header/>
+
+    
+
+
    <About/>
    <Skills/>
-   <Services/>
-   <Work/>
+   <Services/>   <Work/>
    <Contact/>
    <Footer/>
    

@@ -1,6 +1,7 @@
 import { workData } from '@/assests/assets'
 import React from 'react'
 import { GlowingEffect } from './GlowingEffect'
+import Image from 'next/image'
 
 const Work = () => {
   return (
@@ -26,16 +27,22 @@ const Work = () => {
               className="mix-blend-screen"
             />
 
-            <div className="relative p-6 flex flex-col gap-3">
-              <h3 className="text-lg font-semibold text-slate-50">{item.title}</h3>
-              <p className="text-sm text-slate-300 leading-6">{item.description}</p>
-              {item.techStack && item.techStack.length > 0 && (
-                <p className="text-sm text-cyan-300">
-                  Tech stack:{' '}
-                  <span className="text-slate-100">{item.techStack.join(', ')}</span>
-                </p>
-              )}
-            </div>
+            <div className="relative p-6 flex flex-col gap-4">
+  <Image
+    src={item.image}
+    alt={item.title}
+    width={400}
+    height={250}
+    className="rounded-xl object-cover"
+  />
+
+  <h3 className="text-lg font-semibold text-slate-50">{item.title}</h3>
+  <p className="text-sm text-slate-300 leading-6">{item.description}</p>
+
+  <p className="text-sm text-cyan-300">
+    Tech stack: <span className="text-slate-100">{item.techStack.join(', ')}</span>
+  </p>
+</div>
           </article>
         ))}
       </div>

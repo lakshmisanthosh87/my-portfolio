@@ -32,6 +32,7 @@ const Skills = () => {
                 </div>
                 <p className="text-slate-200 mt-1 font-medium text-sm">{skil.name}</p>
               </div>
+              
             </div>
           </Tilt>
         ))}

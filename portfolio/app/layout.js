@@ -1,33 +1,26 @@
-import { Outfit, Ovo } from "next/font/google";
-import "./globals.css";
-import AnimatedBackground from "./components/AnimatedBackground";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-outfit",
-});
-
-const ovo = Ovo({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-ovo",
-});
-
-export const metadata = {
-  title: "portfolio",
-  description: "",
-};
+import { Outfit, Ovo } from "next/font/google"
+import "./globals.css"
+import AnimatedBackground from "./components/AnimatedBackground"
+import LiquidEther from "./components/LiquidEther"
+import { LiquidProvider } from "./LiquidProvider"
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden bg-slate-950 text-slate-100`}
-      >
-        <AnimatedBackground />
-        <div className="relative min-h-screen">{children}</div>
+      <body className="bg-slate-950 text-slate-100 overflow-x-hidden">
+        <LiquidProvider>
+          {/* Background effects */}
+          <div className="fixed inset-0 -z-10">
+            <LiquidEther />
+            <AnimatedBackground />
+          </div>
+
+          {/* App content */}
+          <div className="relative min-h-screen">
+            {children}
+          </div>
+        </LiquidProvider>
       </body>
     </html>
-  );
+  )
 }

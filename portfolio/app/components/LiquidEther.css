@@ -1,0 +1,12 @@
+/* .liquid-ether-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+} */
+
+.liquid-ether-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;   /* 🔥 REQUIRED */
+  overflow: hidden;
+}

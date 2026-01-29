@@ -22,17 +22,13 @@ const Header = () => {
       </div>
 
       {/* Name */}
-      <h3 className="flex items-end gap-2 text-xl md:text-2xl font-ovo text-slate-100">
+      <h3 className="text-xl md:text-2xl font-ovo text-slate-100">
         Hi! I&apos;m Lakshmi Santhosh
-        <Image
-          src={assets.hand_icon}
-          alt="Hello"
-          className="w-6 animate-bounce origin-bottom"
-        />
       </h3>
 
       {/* Title */}
       <h5 className="text-2xl sm:text-4xl lg:text-[42px] font-ovo leading-snug text-slate-50">
+
         <span className="block mb-1 text-slate-300 text-base tracking-[0.3em] uppercase">
           MERN Stack Developer
         </span>
@@ -47,7 +43,11 @@ const Header = () => {
         <span className="block mt-1 text-cyan-300 text-lg sm:text-2xl">
           <TypeWriter
             options={{
-              strings: ['Frontend Developer', 'Backend Developer', 'Web Developer'],
+              strings: [
+                'Frontend Developer',
+                'Backend Developer',
+                'Web Developer',
+              ],
               autoStart: true,
               loop: true,
               delay: 75,
@@ -59,46 +59,45 @@ const Header = () => {
 
       {/* Description */}
       <p className="max-w-2xl mx-auto font-ovo text-slate-300 text-sm sm:text-base">
-        I love building smooth, animated and responsive web apps that feel modern and alive.
-        From pixel-perfect UIs to performant backends, I focus on creating experiences that
-        people remember.
+        I love building smooth, animated and responsive web apps that feel modern
+        and alive. From pixel-perfect UIs to performant backends, I focus on
+        creating experiences that people remember.
       </p>
 
-      {/* Buttons */}
+      {/* View & Download Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
 
-        {/* Contact */}
+        {/* View Resume */}
         <a
-          href="#contact"
-          className="group px-10 py-3 border border-transparent rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white flex items-center gap-2 shadow-lg shadow-cyan-500/40 hover:from-cyan-400 hover:to-blue-600 hover:-translate-y-0.5 transition-all duration-300"
+          href="/resume/Lakshmi_santhosh-cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group px-10 py-3 border rounded-full border-slate-600 flex items-center gap-2 bg-slate-900/70 text-slate-100 hover:bg-slate-900 hover:-translate-y-0.5 hover:border-cyan-400 transition-all duration-300"
         >
-          Contact me
-          <Image
-            src={assets.right_arrow_white}
-            alt="Arrow"
-            className="w-4 transition-transform duration-300 group-hover:translate-x-1"
-          />
+          {/* <Image
+            src={assets.download_icon}
+            alt="View Resume"
+            className="w-4 h-4"
+          /> */}
+          <span>View Resume</span>
         </a>
 
-        {/* Download CV */}
-       {/* Download & View CV */}
-<a
-  href="/resume/Lakshmi_santhosh-cv.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  download
-  className="group px-10 py-3 border rounded-full border-slate-600 flex items-center gap-2 bg-slate-900/70 text-slate-100 hover:bg-slate-900 hover:-translate-y-0.5 hover:border-cyan-400 transition-all duration-300"
->
-  <Image
-    src={assets.download_icon}
-    alt="Download CV"
-    className="w-4 h-4"
-  />
-  <span>View / Download CV</span>
-</a>
-
+        {/* Download Resume */}
+        <a
+          href="/resume/Lakshmi_santhosh-cv.pdf"
+          download
+          className="group px-10 py-3 border border-transparent rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white flex items-center gap-2 shadow-lg shadow-cyan-500/40 hover:from-cyan-400 hover:to-blue-600 hover:-translate-y-0.5 transition-all duration-300"
+        >
+          <Image
+            src={assets.download_icon}
+            alt="Download Resume"
+            className="w-4 h-4"
+          />
+          <span>Download CV</span>
+        </a>
 
       </div>
+
     </div>
   )
 }
